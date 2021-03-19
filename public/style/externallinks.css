@@ -1,0 +1,62 @@
+h1 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
+    background: #b68973; 
+    color: white;
+  }
+h2{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
+}
+
+body{
+
+    background-color: white; 
+}
+
+p {
+    font-family: 'Ubuntu';
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 4px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #050505;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color:grey;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #b68973;
+  padding: 20px;
+}

@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
+    background: #b68973;
+  }
+
+p {
+    font-family: 'Ubuntu';
+}
+
+.navbar li a {
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 15px;
+  color: grey;
+}
+
+.top-section {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 30px;
+    background-color: #b68973;
+    color: white;
+}
+.top-section h1 {
+    margin: 0;
+    font-size: 3.5rem;
+}
+
+
+.item img{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    position: relative;
+    top: 20px;
+}
+
+
+.bottom-section {
+    font-family: 'Ubuntu';
+    font-size: 1.25rem;
+    text-align: center;
+    background: #eabf9f;
+    color: white;
+}
+.bottom-section h1 {
+    font-family: 'Ubuntu';
+    text-align: center;
+}
+
+#logo{
+    vertical-align: left;
+}
