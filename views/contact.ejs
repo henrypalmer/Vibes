@@ -1,8 +1,37 @@
 <%- include("partials/header"); -%>
 
+<section class='contactus'>
+<h1>Contact Form</h1>
+<body>
+    
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your First Name..">
+    
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your Last Name..">
+    
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
 
-
-
+        <label for="country">Email</label>
+        <input type="text" id="email" name="email" placeholder="Your Email..">
+        </select>
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Text.." style="height:200px"></textarea>
+    
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    
+    </body>
+  
+</section>
 
 
 <%- include("partials/footer"); -%>
