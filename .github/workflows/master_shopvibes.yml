@@ -52,5 +52,5 @@ jobs:
       with:
         app-name: 'shopvibes'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_45edabd6a7ce40429734f5247c69b7e6 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1dab0b3e907e42909f815eecbabaa32d }}
         package: .
