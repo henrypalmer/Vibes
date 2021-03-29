@@ -5,6 +5,7 @@ h1 {
     background: #b68973; 
     color: white;
   }
+
 h2{
     font-family: 'Montserrat';
     font-weight: bold;
@@ -57,6 +58,6 @@ input[type=submit]:hover {
 
 .container {
   border-radius: 5px;
-  background-color: #b68973;
+  background-color: white;
   padding: 20px;
 }
