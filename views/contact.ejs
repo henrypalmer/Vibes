@@ -1,29 +1,28 @@
 <%- include("partials/header"); -%>
 
 <head>
-    
-    <link href="/style/externallinks.css" rel="stylesheet" type="text/css">
+
+ <link href="/style/externallinks.css" rel="stylesheet" type="text/css">
 
 </head>
-
-<body>
-
-<h1>Contact Form</h1>
 <form method = "post" action="mailto:sarahmahram@lewisu.edu">
 
+      <h1>Contact Form</h1>
+    </div>
+  </div>
+
+<body>
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder="Your First Name..">
             </div>
-
         <div class="row">
             <div class="col-lg-4">
         <label for="lname">Last Name</label>
         <input type="text" id="lname" name="lastname" placeholder="Your Last Name..">
         </div>
-
         <div class="row">
             <div class="col-lg-4">
         <label for="country">Country</label>
@@ -32,28 +31,27 @@
           <option value="usa">USA</option>
         </select>
         </div>
-
         <div class="row">
             <div class="col-lg-4">
-        <label for="email">Email</label>
+        <label for="country">Email</label>
         <input type="text" id="email" name="email" placeholder="Your Email..">
         </select>
         </div>
-
         <div class="row">
             <div class="col-lg-4">
         <label for="subject">Subject</label>
         <textarea id="subject" name="subject" placeholder="Text.."></textarea>
             </div>
-        
         <div class="row">
             <div class="col-lg-4">
         <input type="submit" value="Submit">
             </div>
-        </div>
+</form>
     </div>
     
-</body>
-</form>
+    </body>
+  
+</section>
+
 
 <%- include("partials/footer"); -%>
