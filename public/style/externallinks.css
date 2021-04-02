@@ -5,18 +5,6 @@ h1 {
     background: #b68973; 
     color: white;
   }
-  .top-section {
-    font-family: 'Montserrat';
-    font-weight: bold;
-    text-align: center;
-    padding: 30px 30px;
-    background-color: #b68973;
-    color: white;
-}
-.top-section h1 {
-    margin: 0;
-    font-size: 3.5rem;
-}
 
 h2{
     font-family: 'Montserrat';
