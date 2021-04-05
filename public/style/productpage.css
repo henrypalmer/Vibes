@@ -18,3 +18,16 @@ img{
     margin-right: auto;
     width: 20%;
 }
+
+.column{
+    float: left;
+    width: 25%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
