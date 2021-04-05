@@ -22,6 +22,10 @@ p {
     text-align: center;
 }
 
+#logo{
+  vertical-align: left;
+}
+
 img{
     display: block;
     margin-left: auto;
