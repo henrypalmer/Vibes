@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%>
+
+<head>
+
+    <link href="/style/productpage.css" rel="stylesheet" type="text/css">
+   
+   </head>
+<body>
+    <h1>Black "it is what it is" Hoodie</h1>
+    <img src="/img/backBLACK.png" >
+    <p>"it is what it is" Black cotton hoodie. Available in sizes Small, Medium, and Large</p>
+
+    <form action="/action_page.php">
+        <label for="sizes">Sizes:</label>
+        <select id="sizes" name="sizes" size="3">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+
+        <label for="qnty">Quantity:</label>
+        <select id="qnty" name="qnty" size="3">
+          <option value="one">1</option>
+          <option value="two">2</option>
+          <option value="three">3</option>
+          <option value="four">4</option>
+        </select>
+
+        <br><br>
+        <input type="cart" value="Add to Cart">
+      </form>
+
+</body>
+
+<%- include("partials/footer"); -%>
