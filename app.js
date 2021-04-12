@@ -3,6 +3,16 @@ const ejs = require('ejs')
 const app = express()
 
 //database code
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://ctadmin:vibesdatabase@vibes.grsee.mongodb.net/Vibes?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("Vibes").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 let MongoClient = require('mongodb').MongoClient;
 var url = "vibesdatabase.mongo.cosmos.azure.com:10255"
 
