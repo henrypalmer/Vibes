@@ -38,7 +38,7 @@ p {
 .item img{
     display: block;
     margin: auto;
-    width: 65%;
+    width: 55%;
     position: relative;
     top: 20px;
 }
@@ -50,6 +50,7 @@ p {
 
 
 .bottom-section {
+    margin: 10px auto;
     font-family: 'Ubuntu';
     font-size: 1.25rem;
     text-align: center;
@@ -75,4 +76,24 @@ p {
 
 .about p {
   text-align: center;
+}
+
+.cart-list img {
+    width: 10%;
+    align-content: right;
+}
+
+.cart-list p {
+    text-align: left;
+    padding-top: 55px;
+}
+
+#checkout-button {
+    background-color: #eabf9f;
+    border: none;
+    text-align: center;
+}
+
+#checkout-button:hover {
+    background-color: #b68973;
 }

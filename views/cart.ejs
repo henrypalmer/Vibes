@@ -1,0 +1,48 @@
+<%- include('partials/header.ejs'); -%>
+
+<h1>Your shopping cart</h1>
+
+<body>
+
+    <div class="row cart-list">
+        <div class="col">
+            <% for (const item of cart) { %>
+            <img src="/img/<%=item.name%>.png" alt="<%=item.name%>">
+            <% } %>
+        </div>
+        <div class="col">
+            <% for (const item of cart) { %>
+            <p><%=item.name%>&#9;<%=item.price%></p>
+            <% } %>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-primary btn-lg" id="checkout-button">Checkout</button>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer"); -%>
