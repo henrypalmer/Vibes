@@ -2,6 +2,48 @@ const express = require('express')
 const ejs = require('ejs')
 const app = express()
 
+//database code
+let MongoClient = require('mongodb').MongoClient;
+var url = "vibesdatabase.mongo.cosmos.azure.com:10255"
+
+app.get('/:name', (req, res) => {
+  MongoClient.connect(url, 
+function(errr, db){
+  if(err) throw err;
+  var dbo = db.db("users");
+dbo.collection("customers").findOne({
+  name: req.params.name 
+},
+  function(err, result){
+    if(err) throw err;
+    res.json(result);
+    db.close();
+  });
+});
+});
+
+app.use(express.json());
+
+app.post('/', (req, res)=>{
+  MongoClient.connect(url, 
+function(errr, db){
+  if(err) throw err;
+  var dbo = db.db("users");
+dbo.collection("customers").insertOne({
+  name: req.body.name,
+  age: req.body.age,
+  phoneNumber: req.body.phoneNumber,
+  shippingAddress: req.body.shippingAddress 
+},
+  function(err, result){
+    if(err) throw err;
+    res.json(result);
+    db.close();
+  });
+});
+});
+//end of database code
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
