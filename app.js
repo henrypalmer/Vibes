@@ -2,7 +2,7 @@ const express = require('express')
 const ejs = require('ejs')
 const app = express()
 
-//database code
+/*database code
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://ctadmin:vibesdb@vibes.grsee.mongodb.net/Vibes?retryWrites=true&w=majority";
@@ -51,7 +51,7 @@ dbo.collection("customers").insertOne({
 });
 
 
-//end of database code
+//end of database code*/
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
