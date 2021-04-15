@@ -11,7 +11,9 @@
 <body>
     <div class='row items'>
         <div class='col'>
-            <a href="/views/backBLACK.ejs">
+            app.get('/views/backBLACK.ejs', function (req, res){
+                res.send(req.params)
+            })
                 <img alt="BackBlack" src="/img/backBLACK.png" alt="backBLACK" >
             </a>
         </div>
