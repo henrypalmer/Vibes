@@ -97,3 +97,8 @@ p {
 #checkout-button:hover {
     background-color: #b68973;
 }
+
+.bear{
+    width: 55%;
+    height: 60%;
+  }
