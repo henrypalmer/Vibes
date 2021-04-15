@@ -97,10 +97,3 @@ p {
 #checkout-button:hover {
     background-color: #b68973;
 }
-
-.bear{
-    display: block;
-    margin: auto;
-    position: relative;
-    top: 20px;
-  }
