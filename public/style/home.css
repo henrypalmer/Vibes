@@ -98,9 +98,9 @@ p {
     background-color: #b68973;
 }
 
-.item .bear{
-    width: 50%;
-    height: 50%;
+.bear{
+    width: 80%;
+    height: 80%;
     display: block;
     margin: auto;
     position: relative;
