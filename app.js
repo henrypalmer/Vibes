@@ -40,6 +40,10 @@ app.get("/cart", function(req, res) {
   res.render("cart", {cart: cart})
 })
 
+app.get("/backBlack", function(req, res) {
+  res.render("backBlack")
+})
+
 const port = process.env.PORT || 3000
 app.listen(port, function() {
     console.log("Server is running on 3000")
