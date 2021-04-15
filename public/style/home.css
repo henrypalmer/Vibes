@@ -40,7 +40,7 @@ p {
     margin: auto;
     width: 55%;
     position: relative;
-    top: 30px;
+    top: 20px;
 }
 
 
@@ -70,8 +70,8 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-    margin-bottom: 10px;
+    width: 60%;
+    margin-bottom: 20px;
 }
 
 .about p {
