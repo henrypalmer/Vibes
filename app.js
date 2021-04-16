@@ -1,5 +1,6 @@
 const express = require('express')
 const ejs = require('ejs')
+const stripe = require('stripe')('sk_test_51IgyKJDfhazcEVWkbK54boaeLLueCf64nAYzsAOLS7wtp7lSrkkDGEH4XApNfYOWCUGyNB79P6jkOlJ8qU7hTyC800lBsgwvGB')
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -41,6 +42,38 @@ app.get("/cart", function(req, res) {
 })
 
 app.get("/backBlack", (req, res) => res.render('backBLACK.ejs'))
+
+app.get("/success", function(req, res) {
+  res.render("success")
+})
+
+app.get("/cancel", function(req, res) {
+  res.render("cancel")
+})
+
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'T-shirt',
+          },
+          unit_amount: 2000,
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: 'https://shopvibes.azurewebsites.net/success',
+    cancel_url: 'https://shopvibes.azurewebsites.net/cancel',
+  })
+
+  res.json({id: session.id})
+})
+
 
 const port = process.env.PORT || 3000
 app.listen(port, function() {
