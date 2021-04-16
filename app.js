@@ -40,7 +40,7 @@ app.get("/cart", function(req, res) {
   res.render("cart", {cart: cart})
 })
 
-app.get("/views/backBlack.ejs", function(req, res) {
+app.get("/backBlack", function(req, res) {
   res.render("backBlack")
 })
 
