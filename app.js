@@ -40,9 +40,7 @@ app.get("/cart", function(req, res) {
   res.render("cart", {cart: cart})
 })
 
-app.get("/backBlack", (req, res) => res.render('backBLACK.ejs') {
-  res.render("backBlack")
-})
+app.get("/backBlack", (req, res) => res.render('backBLACK.ejs'))
 
 const port = process.env.PORT || 3000
 app.listen(port, function() {
