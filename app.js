@@ -2,7 +2,7 @@ const express = require('express')
 const ejs = require('ejs')
 const app = express()
 
-app.set('view engine', 'ejs')
+app.set('view engine', ejs)
 app.use(express.static('public'))
 
 function Item(name, id, price) {
@@ -40,7 +40,7 @@ app.get("/cart", function(req, res) {
   res.render("cart", {cart: cart})
 })
 
-app.get("/views/backBlack", function(req, res) {
+app.get("/backBlack", (req, res) => res.render('backBLACK.ejs') {
   res.render("backBlack")
 })
 
