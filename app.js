@@ -51,6 +51,8 @@ app.get("/maroonIDKMAN", (req, res) => res.render('maroonIDKMAN.ejs'))
 
 app.get("/lightpinkIDKMAN", (req, res) => res.render('lightpinkIDKMAN.ejs'))
 
+app.get("/breakableheart", (req, res) => res.render('breakableheart.ejs'))
+
 app.get("/success", function(req, res) {
   res.render("success")
 })
