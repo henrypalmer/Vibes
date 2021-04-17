@@ -53,6 +53,8 @@ app.get("/lightpinkIDKMAN", (req, res) => res.render('lightpinkIDKMAN.ejs'))
 
 app.get("/breakableheart", (req, res) => res.render('breakableheart.ejs'))
 
+app.get("/sugarcookies", (req, res) => res.render('sugarcookies.ejs'))
+
 app.get("/success", function(req, res) {
   res.render("success")
 })
