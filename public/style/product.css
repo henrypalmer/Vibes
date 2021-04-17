@@ -21,3 +21,8 @@ h1 {
 .items img {
     width: 50%;
   }
+
+button {
+    margin:auto;
+    display:block;
+  }
