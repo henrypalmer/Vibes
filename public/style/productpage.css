@@ -15,9 +15,6 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 55%;
-    position: relative;
-    top: 20px;
 }
 
 .items img {
