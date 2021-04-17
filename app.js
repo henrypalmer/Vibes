@@ -43,6 +43,8 @@ app.get("/cart", function(req, res) {
 
 app.get("/backBlack", (req, res) => res.render('backBLACK.ejs'))
 
+app.get("/backMAROON", (req, res) => res.render('backMAROON.ejs'))
+
 app.get("/success", function(req, res) {
   res.render("success")
 })
