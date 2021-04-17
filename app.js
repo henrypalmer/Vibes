@@ -55,6 +55,8 @@ app.get("/breakableheart", (req, res) => res.render('breakableheart.ejs'))
 
 app.get("/sugarcookies", (req, res) => res.render('sugarcookies.ejs'))
 
+app.get("/mug", (req, res) => res.render('mug.ejs'))
+
 app.get("/success", function(req, res) {
   res.render("success")
 })
