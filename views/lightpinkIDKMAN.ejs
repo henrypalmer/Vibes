@@ -1,0 +1,35 @@
+<%- include("partials/header"); -%>
+
+  <head>
+
+    <link href="/style/product.css" rel="stylesheet" type="text/css">
+   
+   </head>
+
+  <body>
+    <h1>Light Pink "idk man" Hoodie</h1>
+    <img src="/img/lightpinkIDKMAN.png" width= "550" height= "650" >
+    <p>Light Pink "idk man" Cotton Hoodie.</p>
+
+    <form action="/cart">
+        <label for="sizes">Sizes:</label>
+        <select name="sizes" id="sizes">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+
+        <label for="qnty">Quantity:</label>
+        <select name="qnty" id="qnty">
+          <option value="1">1</option>
+          <option value="two">2</option>
+          <option value="three">3</option>
+          <option value="four">4</option>
+        </select>
+        <br><br>
+        <button>Add to Cart</button>
+      </form>
+
+  </body>
+
+<%- include("partials/footer"); -%>

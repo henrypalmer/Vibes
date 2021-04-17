@@ -49,6 +49,8 @@ app.get("/bear", (req, res) => res.render('bear.ejs'))
 
 app.get("/maroonIDKMAN", (req, res) => res.render('maroonIDKMAN.ejs'))
 
+app.get("/lightpinkIDKMAN", (req, res) => res.render('lightpinkIDKMAN.ejs'))
+
 app.get("/success", function(req, res) {
   res.render("success")
 })
