@@ -1,12 +1,23 @@
 const express = require('express')
 const ejs = require('ejs')
+const mongoose = require('mongoose')
+const Customer = require('./routes/customers')
+const createCustomer = require('./routes/customers')
+const getCustomers = require('./routes/customers')
 const stripe = require('stripe')('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')
 const app = express()
-const bodyParser = require("body-parser")
+//Mike commented this out due to depracation
+//and replaced with express.json()
+//LEAVING FOR A SECOND LOOK.
+//const bodyParser = require("body-parser")
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
-app.use(bodyParser.urlencoded({ extended: false }));
+//Mike commented this out and replaced with express.urlencoded
+//and set it to true..unsure about which option at this moment
+//app.use(bodyParser.urlencoded({ extended: false }));
 
 function Item(name, unit_amount, quantity) {
   this.price_data = {}
@@ -58,6 +69,22 @@ app.get("/products", function(req, res) {
 
 app.get("/cart", function(req, res) {
   res.render("cart", {cart: cart})
+})
+
+app.get("/signup", function(req, res){ 
+  res.render("signup")
+})
+
+app.get("/login", function(req, res){ 
+  res.render("login")
+})
+
+app.post("./routes/customers", (req, res) => {
+  Customer.createCustomer
+})
+
+app.post("./routes/customers", (req, res) => {
+  Customer.getCustomers
 })
 
 app.get("/backBlack", (req, res) => res.render('backBLACK.ejs'))

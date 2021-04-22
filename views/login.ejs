@@ -1,0 +1,23 @@
+<%- include("partials/header"); -%>
+<html lang='en'>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <div>
+            <form action='/' method='GET'>
+            <span>Sign In</span>
+            <div data-validate='Please enter username'>  
+                <input type='text' name='userName' placeholder='Username'>
+            </div>
+            <div data-validate = 'Please enter password'>
+                <input type='text' name='password' placeholder='Password'>
+            </div>
+            <div>
+                <button>Sign In</button>
+            </div>
+            </form>
+        </div>
+    </body>
+</html>
+<%- include("partials/footer"); -%>
