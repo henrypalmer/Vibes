@@ -1,6 +1,6 @@
 const express = require('express')
 const ejs = require('ejs')
-const stripe = require('stripe')('sk_test_51IgyKJDfhazcEVWkbK54boaeLLueCf64nAYzsAOLS7wtp7lSrkkDGEH4XApNfYOWCUGyNB79P6jkOlJ8qU7hTyC800lBsgwvGB')
+const stripe = require('stripe')('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')
 const app = express()
 
 app.set('view engine', 'ejs')
@@ -68,6 +68,10 @@ app.get("/cancel", function(req, res) {
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
+    shipping_rates: ['shr_1IiobFDfhazcEVWk1pYnrxcs'],
+    shipping_address_collection: {
+      allowed_countries: ['US'],
+    },
     line_items: [
       {
         price_data: {
