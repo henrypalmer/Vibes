@@ -7,12 +7,12 @@
     <div class="row cart-list">
         <div class="col">
             <% for (const item of cart) { %>
-            <img src="/img/<%=item.name%>.png" alt="<%=item.name%>">
+            <img src="/img/<%=item.price_data.product_data.name%>.png" alt="<%=item.price_data.product_data.name%>">
             <% } %>
         </div>
         <div class="col">
             <% for (const item of cart) { %>
-            <p><%=item.name%>&#9;<%=item.price%></p>
+            <p><%=item.price_data.product_data.name%>&#9;<%=item.price_data.unit_amount%></p>
             <% } %>
         </div>
     </div>
