@@ -12,18 +12,7 @@
     <p>$24.99</p>
     <p>"it is what it is" Black Cotton Hoodie.</p>
 
-    <form action="line_items: [
-    {
-      price_data: {
-        currency: 'usd',
-        product_data: {
-          name: 'backBlack',
-        },
-        unit_amount: 2000,
-      },
-      quantity: qnty,
-    },
-  ]">
+    <form name="backBlack" id="cart" method="post" action="/cart">
         <label for="sizes">Sizes:</label>
         <select name="sizes" id="sizes">
           <option value="small">Small</option>

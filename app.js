@@ -65,6 +65,10 @@ app.get("/cancel", function(req, res) {
   res.render("cancel")
 })
 
+app.post('/cart', function(req,res) {
+  var sizes = req.body.sizes
+  var qnty = req.body.qnty
+})
 app.post('/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
