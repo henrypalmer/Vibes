@@ -10,14 +10,14 @@ const app = express()
 //and replaced with express.json()
 //LEAVING FOR A SECOND LOOK.
 //const bodyParser = require("body-parser")
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.json())
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 //Mike commented this out and replaced with express.urlencoded
 //and set it to true..unsure about which option at this moment
 //app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended: true}))
 
 function Item(name, unit_amount, quantity) {
   this.price_data = {}
