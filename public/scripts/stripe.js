@@ -1,5 +1,5 @@
 // script to initialize the checkout process
-var stripe = Stripe("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");
+var stripe = Stripe("pk_live_51IgyKJDfhazcEVWkGwlTm8AXlH0o2KBUe7MDYYkE4ho9ZRLMzarEPHpAl63MJvQDkgpnpeCQcoBeLvCZyOq4SfbD00gPiMljx5");
 
 function checkout () {
     fetch("/create-checkout-session", {
