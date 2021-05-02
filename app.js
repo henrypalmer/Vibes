@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const Customer = require('./routes/customers')
 const createCustomer = require('./routes/customers')
 const getCustomers = require('./routes/customers')
+const Product = require('./routes/products')
 const stripe = require('stripe')('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')
 const app = express()
 //Mike commented this out due to depracation
@@ -17,7 +18,12 @@ app.use(express.static('public'))
 //Mike commented this out and replaced with express.urlencoded
 //and set it to true..unsure about which option at this moment
 //app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({extended: false}))
+
+//mongoose.connect("mongodb+srv://ctadmin:vibesdb@vibes.grsee.mongodb.net/VibesCustomers?retryWrites=true&w=majority", 
+//    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true, useCreateIndex: true })
+    
+
 
 function Item(name, unit_amount, quantity) {
   this.price_data = {}
@@ -27,6 +33,7 @@ function Item(name, unit_amount, quantity) {
   this.price_data.unit_amount = unit_amount
   this.quantity = quantity
 }
+
 
 item1 = new Item("backBLACK",2499, 1)
 item2 = new Item("backMAROON",2499, 1)
@@ -71,7 +78,8 @@ app.get("/cart", function(req, res) {
   res.render("cart", {cart: cart})
 })
 
-app.get("/signup", function(req, res){ 
+app.get("/signup", function(req, res){
+  createCustomer 
   res.render("signup")
 })
 
@@ -79,14 +87,15 @@ app.get("/login", function(req, res){
   res.render("login")
 })
 
-app.post("./routes/customers", (req, res) => {
-  Customer.createCustomer
-})
+//app.post("/routes/customers", (req, res) => {
+//  Customer.createCustomer
+//})
 
+/*
 app.post("./routes/customers", (req, res) => {
   Customer.getCustomers
 })
-
+*/
 app.get("/backBlack", (req, res) => res.render('backBLACK.ejs'))
 
 app.get("/backMAROON", (req, res) => res.render('backMAROON.ejs'))
