@@ -1,4 +1,3 @@
-const Product = require('../models/product')
 const mongoose = require('mongoose')
 
 const Product = new mongoose.model("Product", new mongoose.Schema({
@@ -8,3 +7,5 @@ const Product = new mongoose.model("Product", new mongoose.Schema({
     unit_amount: { Number: Number, }, // 2000,
     quantity: Number //1,
 }));
+
+module.exports.Product = Product;

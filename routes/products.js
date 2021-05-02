@@ -1,14 +1,6 @@
-const mongoose = require('mongoose');
+const Product = require('../models/product')
 const express = require('express');
 const router = express.Router();
-
-const Product = new mongoose.model("Product", new mongoose.Schema({
-
-    price_data: { currency: Number, }, //USD
-    product_data: {name: String, }, //"T-shirt",//category
-    unit_amount: { Number: Number, }, // 2000,
-    quantity: Number //1,
-}));
 
 router.get('/', async (req, res) => {
     const product = await Product.find().sort('product_data')
@@ -32,4 +24,4 @@ router.post('/', async (req, res) => {
      res.send(product)
 })
 
-module.exports.Product = Product;
+exports.router = router
