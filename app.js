@@ -2,9 +2,8 @@ const express = require('express')
 const ejs = require('ejs')
 const mongoose = require('mongoose')
 const Customer = require('./routes/customers')
-const createCustomer = require('./routes/customers')
-const getCustomers = require('./routes/customers')
 const Product = require('./routes/products')
+
 const stripe = require('stripe')('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')
 const app = express()
 //Mike commented this out due to depracation
@@ -12,6 +11,7 @@ const app = express()
 //LEAVING FOR A SECOND LOOK.
 //const bodyParser = require("body-parser")
 app.use(express.json())
+app.use('./routes/customers', Customer)
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
@@ -20,9 +20,10 @@ app.use(express.static('public'))
 //app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.urlencoded({extended: false}))
 
-//mongoose.connect("mongodb+srv://ctadmin:vibesdb@vibes.grsee.mongodb.net/VibesCustomers?retryWrites=true&w=majority", 
-//    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true, useCreateIndex: true })
-    
+mongoose.connect("mongodb+srv://ctadmin:vibesdb@vibes.grsee.mongodb.net/Vibes?retryWrites=true&w=majority", 
+    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true, useCreateIndex: true })
+.then( () => console.log('Connected to MongoDB Successfully'))
+.catch( () => console.error("Could not connect to MongoDB"))    
 
 
 function Item(name, unit_amount, quantity) {
@@ -79,7 +80,6 @@ app.get("/cart", function(req, res) {
 })
 
 app.get("/signup", function(req, res){
-  createCustomer 
   res.render("signup")
 })
 
@@ -87,9 +87,9 @@ app.get("/login", function(req, res){
   res.render("login")
 })
 
-//app.post("/routes/customers", (req, res) => {
-//  Customer.createCustomer
-//})
+app.post("/routes/customers", (req, res) => {
+  res.redirect('/')
+})
 
 /*
 app.post("./routes/customers", (req, res) => {

@@ -2,28 +2,34 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
-const productSchema = new mongoose.Schema({
+const Product = new mongoose.model("Product", new mongoose.Schema({
 
     price_data: { currency: Number, }, //USD
     product_data: {name: String, }, //"T-shirt",//category
     unit_amount: { Number: Number, }, // 2000,
     quantity: Number //1,
-})
-const Product = mongoose.model("Product", productSchema);
+}));
 
-async function getProduct(){
-    mongoose.connect("mongodb+srv://ctadmin:vibesdb@vibes.grsee.mongodb.net/VibesProducts?retryWrites=true&w=majority", 
-    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true, useCreateIndex: true })
-    .then(() => console.log('Connected to MongoDB Successfully'))
-    .catch( () => console.error("Could not connect to MongoDB"));
-    const products = await Product
-    .find();
-    //Here to show other options until production for quick edits
-    //.limit(2);
-    //.sort({name: 1});
-    //.select({ name: 1});
-    //.count();
-    // console.log(customers); //log for testing
-}
+router.get('/', async (req, res) => {
+    const product = await Product.find().sort('product_data')
+    res.send(product)
+})
+
+router.post('/', async (req, res) => {
+    if (error) return res.status(400).send("Whoops")
+    
+    let product = new Product({
+        firstName : req.body.firstName,
+        lastName : req.body.lastName,
+        phoneNumber : req.body.phoneNumber,
+        email : req.body.email,
+        address : req.body.address,
+        userName : req.body.userName,
+        password : req.body.password    
+     })
+     product = await product.save();
+     console.log(product)
+     res.send(product)
+})
+
 module.exports.Product = Product;
-module.exports.getProduct = getProduct();

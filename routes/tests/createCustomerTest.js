@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+/*const mongoose = require('mongoose');
 
 //unique set to false for testing purposes
 
@@ -30,3 +30,5 @@ async function createCustomer(){
 createCustomer();
 
 module.exports.Customer = Customer;
+
+*/
