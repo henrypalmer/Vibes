@@ -23,38 +23,16 @@ app.use('/routes/products', products)
 
   
 
-
-function Item(name, unit_amount, quantity) {
-  this.price_data = {}
-  this.price_data.currency = 'usd'
-  this.price_data.product_data = {}
-  this.price_data.product_data.name = name
-  this.price_data.unit_amount = unit_amount
-  this.quantity = quantity
-}
-
-
-item1 = new Item("backBLACK",2499, 1)
-item2 = new Item("backMAROON",2499, 1)
-item3 = new Item("maroonIDKMAN",2499, 1)
-const cart = []
-cart.push(item1)
-cart.push(item2)
-cart.push(item3)
-
+ function Item(name, unit_amount, quantity) {
+    this.price_data = {}
+    this.price_data.currency = 'usd'
+    this.price_data.product_data = {}
+    this.price_data.product_data.name = name
+    this.price_data.unit_amount = unit_amount
+    this.quantity = quantity
+  }
 
 const line_items = []
-  // {
-  //   price_data: {
-  //     currency: 'usd',
-  //     product_data: {
-  //       name: "T-shirt",
-  //     },
-  //     unit_amount: 2000,
-  //   },
-  //   quantity: 1,
-  // }
-
 
 
 app.get('/', function(req, res) {
@@ -74,7 +52,11 @@ app.get("/products", function(req, res) {
 })
 
 app.get("/cart", function(req, res) {
-  res.render("cart", {cart: cart})
+  res.render("cart", {cart: line_items})
+  for (Item of line_items) {
+    console.log(Item);
+  }
+
 })
 
 app.get("/signup", function(req, res){
@@ -129,10 +111,13 @@ app.get("/cancel", function(req, res) {
   res.render("cancel")
 })
 
+
 app.post('/cart', function(req,res) {
-  var size = req.body.size
-  var quantity = req.body.qnty
-  // let item = new Item(name, unit_amount, quantity)
+  let name = String(req.body.productName);
+  let unit_amount = Number(req.body.price) * 100;
+  let quantity = Number(req.body.qnty);
+  let newItem = new Item(name, unit_amount, quantity);
+  line_items.push(newItem);
   res.redirect("/cart");
 })
 
@@ -145,18 +130,6 @@ app.post('/create-checkout-session', async (req, res) => {
       allowed_countries: ['US'],
     },
     line_items,
-    // line_items: [
-    //   {
-    //     price_data: {
-    //       currency: 'usd',
-    //       product_data: {
-    //         name: 'T-shirt',
-    //       },
-    //       unit_amount: 2000,
-    //     },
-    //     quantity: 1,
-    //   },
-    // ],
     mode: 'payment',
     success_url: 'https://shopvibes.azurewebsites.net/success',
     cancel_url: 'https://shopvibes.azurewebsites.net/cancel',

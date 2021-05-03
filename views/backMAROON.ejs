@@ -7,12 +7,26 @@
    </head>
 
   <body>
-    <h1>Maroon "it is what it is" Hoodie</h1>
+    <h1 id="productName">Maroon "it is what it is" Hoodie</h1>
     <img src="/img/backMAROON.png" width= "550" height= "650" >
-    <p>$24.99</p>
     <p>"it is what it is" Maroon Cotton Hoodie.</p>
 
-    <form action="/cart">
+    <form action="/cart" method="post" action="/cart">
+
+
+      <label for="price">Item ID:</label>
+      <select name="productName" id="productName">
+        <option value="backMAROON">backMAROON</option>
+      </select>
+  
+  
+      <label for="price">Price:</label>
+      <select name="price" id="price">
+        <option value="24.99">24.99</option>
+      </select>
+
+
+
         <label for="sizes">Sizes:</label>
         <select name="sizes" id="sizes">
           <option value="small">Small</option>

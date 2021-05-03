@@ -1,36 +1,48 @@
 <%- include("partials/header"); -%>
 
-  <head>
+<head>
 
-    <link href="/style/product.css" rel="stylesheet" type="text/css">
-   
-   </head>
+  <link href="/style/product.css" rel="stylesheet" type="text/css">
 
-  <body>
-    <h1>Black "it is what it is" Hoodie</h1>
-    <img src="/img/backBLACK.png" width= "550" height= "650" >
-    <p>$24.99</p>
-    <p>"it is what it is" Black Cotton Hoodie.</p>
+</head>
 
-    <form name="backBlack" id="cart" method="post" action="/cart">
-        <label for="sizes">Sizes:</label>
-        <select name="sizes" id="sizes">
-          <option value="small">Small</option>
-          <option value="medium">Medium</option>
-          <option value="large">Large</option>
-        </select>
+<body>
 
-        <label for="qnty">Quantity:</label>
-        <select name="qnty" id="qnty">
-          <option value="1">1</option>
-          <option value="two">2</option>
-          <option value="three">3</option>
-          <option value="four">4</option>
-        </select>
-        <br><br>
-        <button>Add to Cart</button>
-      </form>
+  <h1>Black "it is what it is" Hoodie</h1>
+  <img src="/img/backBLACK.png" width="550" height="650">
+  <p>"it is what it is" Black Cotton Hoodie.</p>
 
-  </body>
+  <form name="backBlack" id="cart" method="post" action="/cart">
+
+    <label for="price">Item ID:</label>
+    <select name="productName" id="productName">
+      <option value="backBLACK">backBLACK</option>
+    </select>
+
+
+    <label for="price">Price:</label>
+    <select name="price" id="price">
+      <option value="24.99">24.99</option>
+    </select>
+
+    <label for="sizes">Sizes:</label>
+    <select name="sizes" id="sizes">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+
+    <label for="qnty">Quantity:</label>
+    <select name="qnty" id="qnty">
+      <option value="1">1</option>
+      <option value="two">2</option>
+      <option value="three">3</option>
+      <option value="four">4</option>
+    </select>
+    <br><br>
+    <button>Add to Cart</button>
+  </form>
+
+</body>
 
 <%- include("partials/footer"); -%>

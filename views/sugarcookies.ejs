@@ -7,12 +7,12 @@
    </head>
 
   <body>
-    <h1>Sugar Cookies</h1>
+    <h1 id="productName">Sugar Cookies</h1>
     <img src="/img/sugarcookies.png" width= "550" height= "650" >
-    <p>$20 per dozen</p>
+    <p id="price">$20 per dozen</p>
     <p>Heart Shaped Medium Size Sugar Cookies. Each cookies comes in a clear plastic bag tied with ribbon. (Color of icing, initials, and ribbon is added in the customization box below)</p>
 
-    <form action="/cart">
+    <form action="/cart" method="post" action="/cart">
         <label for="qnty">Quantity:</label>
         <select name="qnty" id="qnty">
           <option value="1">1</option>
