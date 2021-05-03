@@ -1,6 +1,7 @@
 const Product = require('../models/product')
 const express = require('express');
 const router = express.Router();
+router.use(express.json())
 
 router.get('/', async (req, res) => {
     const product = await Product.find().sort('product_data')
@@ -8,20 +9,18 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    if (error) return res.status(400).send("Whoops")
-    
-    let product = new Product({
-        firstName : req.body.firstName,
-        lastName : req.body.lastName,
-        phoneNumber : req.body.phoneNumber,
-        email : req.body.email,
-        address : req.body.address,
-        userName : req.body.userName,
-        password : req.body.password    
-     })
-     product = await product.save();
-     console.log(product)
-     res.send(product)
+    try{        
+        let product = new Product({
+            price_data : req.body.price_data,
+            product_data : req.body.product_data,
+            unit_amount : req.body.unit_amount
+        })
+        product = await product.save();
+        console.log(product)
+        res.send(product)
+    }catch(ex){
+            console.log(ex.message)
+    }
 })
 
-exports.router = router
+module.exports = router
