@@ -5,10 +5,10 @@ const Customer = require('./models/customer')
 const customers = require('./routes/customers')
 const Product = require('./models/product')
 const products = require('./routes/products')
-const stripe = require('stripe')('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')
+const stripe = require('stripe')('apikeygoeshere')
 const app = express()
 
-mongoose.connect("mongodb+srv://ctadmin:vibesdb@vibes.grsee.mongodb.net/Vibes?retryWrites=true&w=majority", 
+mongoose.connect("mongourl", 
     { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true, useCreateIndex: true })
 .then( () => console.log('Connected to MongoDB Successfully'))
 .catch( () => console.error("Could not connect to MongoDB"))  
